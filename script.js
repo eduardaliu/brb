@@ -1,11 +1,20 @@
 $(document).ready(() => {
 
+	const mobile = document.querySelector(".mobile");
+	const desktop = document.querySelector(".desktop");
 
 	const hamburger = document.querySelector(".hamburger");
 	const emoji = document.querySelector(".emoji");
-	
 
 
+	document.querySelector("body").addEventListener("click", function () {
+		console.log('aaoooo');
+		document.querySelector(".hamburger-inner").classList.add("focus");
+		setTimeout(function () {
+			document.querySelector(".hamburger-inner").classList.remove("focus");
+		}, 300)
+
+	})
 
 
 	hamburger.addEventListener("click", function () {
@@ -37,9 +46,9 @@ $(document).ready(() => {
 				document.querySelector('.blue').classList.remove('uni')
 				document.querySelector('.extra').classList.remove('uni');
 
-				
+
 			}
-	
+
 		})
 
 
@@ -49,8 +58,70 @@ $(document).ready(() => {
 
 
 
+	$('.hello-cont').on("click", function () {
+		document.querySelector('.overlay').classList.toggle('is-active');
+		document.querySelector('.hello').innerText = 'tchüss!';
+	})
 
 
+	$('.codegif').mouseenter(function (e) {
+		console.log('works')
+		$("#gifcode").css('opacity', '1');
+		$("#gifcode").css({
+			left: e.pageX - 400,
+			top: e.pageY
+		});
+	}).on('mouseleave', function () {
+		$("#gifcode").css('opacity', '0');
+	});
+
+	$('.designgif').mouseenter(function (e) {
+		console.log('works')
+		$("#gifdesign").css('opacity', '1');
+		$("#gifdesign").css({
+			left: e.pageX - 400,
+			top: e.pageY
+		});
+	}).on('mouseleave', function () {
+		$("#gifdesign").css('opacity', '0');
+	});
+
+
+
+
+
+
+
+
+	console.log(document.querySelector(".desktop").style.display)
+
+
+	$(document).on("mousemove", function (ev) {
+		// console.log('asas')
+
+
+
+		let mouseX = ev.originalEvent.pageX;
+		let mouseY = ev.originalEvent.pageY;
+
+		let offsetX = window.innerWidth * 0.01;
+		let offsetY = window.innerHeight * 0.1;
+
+		$(".line span").each(function () {
+			let imgX = $(this).position().left + offsetX / 2;
+			let imgY = $(this).position().top + offsetY / 2;
+
+			let diffX = mouseX - imgX;
+			let diffY = mouseY - imgY;
+
+			let radians = Math.atan2(diffY, diffX);
+
+			let angle = (radians * 180) / Math.PI;
+
+			$(this).css("transform", "rotate(" + angle + "deg)");
+		});
+
+	});
 
 
 
@@ -58,26 +129,3 @@ $(document).ready(() => {
 
 
 });
-
-// $(document).on("mousemove", function (ev) {
-// 	console.log('asas')
-// 	let mouseX = ev.originalEvent.pageX;
-// 	let mouseY = ev.originalEvent.pageY;
-
-// 	let offsetX = window.innerWidth * 0.01;
-// 	let offsetY = window.innerHeight * 0.1;
-
-// 	$("span").each(function () {
-// 		let imgX = $(this).position().left + offsetX / 2;
-// 		let imgY = $(this).position().top + offsetY / 2;
-
-// 		let diffX = mouseX - imgX;
-// 		let diffY = mouseY - imgY;
-
-// 		let radians = Math.atan2(diffY, diffX);
-
-// 		let angle = (radians * 180) / Math.PI;
-
-// 		$(this).css("transform", "rotate(" + angle + "deg)");
-// 	});
-// });
