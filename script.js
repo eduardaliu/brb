@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+
 	const mobile = document.querySelector(".mobile");
 	const desktop = document.querySelector(".desktop");
 
@@ -13,12 +14,10 @@ $(document).ready(() => {
 		setTimeout(function () {
 			document.querySelector(".hamburger-inner").classList.remove("focus");
 		}, 300)
-
 	})
 
 
 	hamburger.addEventListener("click", function () {
-
 
 		hamburger.classList.toggle("is-active");
 		document.querySelector('.blue').classList.toggle('is-active');
@@ -39,30 +38,23 @@ $(document).ready(() => {
 				emoji.innerHTML = '<img src="img/fab.svg">🦄'
 				document.querySelector('.blue').classList.add('uni');
 				document.querySelector('.extra').classList.add('uni');
-
-
 			} else {
 				emoji.innerHTML = '<img src="img/click.svg">🐴'
 				document.querySelector('.blue').classList.remove('uni')
 				document.querySelector('.extra').classList.remove('uni');
-
-
 			}
-
 		})
-
-
 	});
-
-
-
-
 
 	$('.hello-cont').on("click", function () {
 		document.querySelector('.overlay').classList.toggle('is-active');
-		document.querySelector('.hello').innerText = 'tchüss!';
+		if (document.querySelector('.hello').innerHTML === 'hello!') {
+			document.querySelector('.hello').innerHTML = 'byebye!';
+		} 
+		else  {
+		 	document.querySelector('.hello').innerHTML = 'hello!';
+		 }
 	})
-
 
 	$('.codegif').mouseenter(function (e) {
 		console.log('works')
@@ -86,21 +78,7 @@ $(document).ready(() => {
 		$("#gifdesign").css('opacity', '0');
 	});
 
-
-
-
-
-
-
-
-	console.log(document.querySelector(".desktop").style.display)
-
-
 	$(document).on("mousemove", function (ev) {
-		// console.log('asas')
-
-
-
 		let mouseX = ev.originalEvent.pageX;
 		let mouseY = ev.originalEvent.pageY;
 
@@ -120,11 +98,7 @@ $(document).ready(() => {
 
 			$(this).css("transform", "rotate(" + angle + "deg)");
 		});
-
 	});
-
-
-
 
 
 
