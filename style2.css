@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+: root {
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Roboto Mono', monospace;
+	line-height: 1.5;
+	color: blue;
+	/* -webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: white; */
+	width: 100%;
+	height: 100%;
+	/* position: fixed; */
+	/* display: flex;
+	justify-content: center;
+	background-color: #fff; */
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	/* background-color: pink; */
+	padding-bottom: 3rem;
+}
+
+.hamburger {
+	padding: 10vmin 0 0 10vmin;
+	display: inline-block;
+	/* transition-property: filter 0.15s linear; */
+	background-color: transparent;
+	border: 0;
+	outline: none;
+	overflow: visible;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+	background-color: blue;
+}
+
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: blue;
+	border-radius: 4px;
+	position: absolute;
+	transition-property: transform 0.15s ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: "";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -10px;
+}
+
+.hamburger-inner::after {
+	bottom: -10px;
+}
+
+.hamburger--spin .hamburger-inner {
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+	transition: top 0.1s 0.25s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+	transform: rotate(225deg);
+	transition-delay: 0.15s;
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.1s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin-r .hamburger-inner {
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin-r .hamburger-inner::before {
+	transition: top 0.1s 0.25s ease-in;
+}
+
+.hamburger--spin-r .hamburger-inner::after {
+	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin-r.is-active .hamburger-inner {
+	transform: rotate(-225deg);
+	transition-delay: 0.15s;
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin-r.is-active .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.1s ease-out;
+}
+
+.hamburger--spin-r.is-active .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(90deg);
+	transition: bottom 0.1s ease-out, transform 0.25s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.emoji {
+	padding: 10vmin 10vmin 0 0;
+	font-size: 3.5rem;
+}
+
+.hi,
+.extra {
+	padding: 0 10vmin 0 10vmin;
+}
+
+h1 {
+	margin: 0 0 0.2rem 0;
+}
+
+.hi {
+	margin: 5rem 0 3rem 0;
+}
+
+.extra {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.test {
+	color: #fff;
+	background-color: blue;
+}
+
+footer {
+	box-sizing: border-box;
+	padding: 0 10vmin 10vmin 0;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	text-align: right;
+}
+
+footer > img {
+	padding: 0 0 0 1rem;
+}
+
+
+
+/* #secondStyle {
+	font-family: helvetica;
+	font-weight: bold;
+	font-size: 70px;
+	color: white;
+  }
+  
+  .row {
+	  margin: 20px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 20%;
+  }
+  
+  .row .line {
+	width: 10%;
+	height: 100%;
+	display: flex;
+  }
+  .row .line span {
+	width: 0.0vw;
+	height: 10vh;
+	border-radius: 1vw;
+	background: #111;
+	margin: auto;
+  }
+   */
