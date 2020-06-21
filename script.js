@@ -10,12 +10,13 @@ $(document).ready(() => {
 
 	hamburger.addEventListener("click", function () {
 
-		emoji.classList.toggle('is-active')
 
 		hamburger.classList.toggle("is-active");
 		document.querySelector('.blue').classList.toggle('is-active');
 
 		setTimeout(function () {
+			emoji.classList.toggle('is-active')
+
 			document.querySelector('.imggit').classList.toggle('is-active');
 			document.querySelector('.imglink').classList.toggle('is-active');
 			document.querySelector('h1').classList.toggle('is-active');
@@ -25,14 +26,17 @@ $(document).ready(() => {
 
 		emoji.addEventListener("click", function () {
 			// emoji.classList.toggle('is-active');
-			if (emoji.innerHTML == '🌦') {
-				emoji.innerHTML = '🦄'
-				document.querySelector('body').classList.add('uni')
-				document.querySelector('.blue').classList.toggle('uni');
+			if (emoji.innerHTML == '<img src="img/click.svg">🐴') {
+				emoji.innerHTML = '<img src="img/fab.svg">🦄'
+				document.querySelector('.blue').classList.add('uni');
+				document.querySelector('.extra').classList.add('uni');
+
 
 			} else {
-				emoji.innerHTML = '🌦'
-				document.querySelector('body').classList.remove('uni')
+				emoji.innerHTML = '<img src="img/click.svg">🐴'
+				document.querySelector('.blue').classList.remove('uni')
+				document.querySelector('.extra').classList.remove('uni');
+
 				
 			}
 	

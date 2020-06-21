@@ -29,7 +29,7 @@ body.is-active {
 }
 
 body.uni {
-background-color: pink;
+	background-color: pink;
 }
 
 .blue {
@@ -51,6 +51,29 @@ background-color: pink;
 	width: 120rem;
 	height: 120rem;
 	transition: opacity 200ms ease-in, width 500ms ease-in, height 500ms ease-in;
+}
+
+.blue.is-active.uni {
+	animation: unibgcolor 1s linear 0s infinite alternate;
+	background-image: url(img/stars.gif);
+	
+	background-size: 100vw;
+
+}
+
+@keyframes unibgcolor {
+	0% {
+		background-color: rgb(156, 69, 190)
+	}
+
+	50% {
+		background-color: rgb(255, 146, 197)
+	}
+
+	100% {
+		background-color: orange
+	}
+
 }
 
 header {
@@ -98,7 +121,18 @@ header {
 	border-radius: 4px;
 	position: absolute;
 	transition-property: transform 0.15s ease;
+	/* animation: bgcolor 1s infinite; */
 }
+
+/* @keyframes bgcolor {
+	0% {
+		background-color: blue;
+	}
+	100% {
+		background-color: rgb(56, 56, 252);
+	}
+
+} */
 
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -183,13 +217,17 @@ header {
 	font-size: 3.5rem;
 }
 
+.emoji>span {
+	font-size: 0.8rem;
+}
+
 .emoji.is-active {
 	pointer-events: auto;
 	opacity: 1;
 }
 
 .hi {
-	margin: 30vmin 10vmin 0 10vmin;
+	margin: 25vmin 10vmin 0 10vmin;
 }
 
 
@@ -260,6 +298,19 @@ p {
 	border-width: 0 0 1.5px;
 	border-style: dotted;
 	border-color: blue;
+}
+
+.extra.is-active.uni {
+	color: white;
+	background-color: rgb(0, 182, 167);
+}
+
+.extra.is-active.uni:before {
+	border-bottom-color: rgb(0, 182, 167);
+}
+
+.extra.uni>b {
+	border-color: yellow;
 }
 
 
